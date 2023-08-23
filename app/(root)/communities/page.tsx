@@ -1,5 +1,7 @@
 import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
+//import { ConnectWallet } from "@thirdweb-dev/react";
+//import { useAddress } from "@thirdweb-dev/react";
 
 import Searchbar from "@/components/shared/Searchbar";
 import Pagination from "@/components/shared/Pagination";
@@ -25,10 +27,13 @@ async function Page({
     pageSize: 25,
   });
 
+
   return (
     <>
-      <h1 className='head-text'>Communities</h1>
-
+      <h1 className='head-text'>Organisations</h1>
+      <div className="text-white">
+        Connect to web3
+      </div>
       <div className='mt-5'>
         <Searchbar routeType='communities' />
       </div>

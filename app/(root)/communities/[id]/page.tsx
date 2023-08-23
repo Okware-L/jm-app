@@ -27,7 +27,7 @@ async function Page({ params }: { params: { id: string } }) {
         bio={communityDetails.bio}
         type='Community'
       />
-
+      <div className="text-white">here?</div>
       <div className='mt-9'>
         <Tabs defaultValue='threads' className='w-full'>
           <TabsList className='tab'>

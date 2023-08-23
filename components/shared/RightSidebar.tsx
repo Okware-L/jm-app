@@ -20,7 +20,7 @@ async function RightSidebar() {
     <section className='custom-scrollbar rightsidebar'>
       <div className='flex flex-1 flex-col justify-start'>
         <h3 className='text-heading4-medium text-light-1'>
-          Suggested Communities
+          Suggested Organisations
         </h3>
 
         <div className='mt-7 flex w-[350px] flex-col gap-9'>
@@ -46,7 +46,7 @@ async function RightSidebar() {
       </div>
 
       <div className='flex flex-1 flex-col justify-start'>
-        <h3 className='text-heading4-medium text-light-1'>Similar Minds</h3>
+        <h3 className='text-heading4-medium text-light-1'>connect</h3>
         <div className='mt-7 flex w-[350px] flex-col gap-10'>
           {similarMinds.users.length > 0 ? (
             <>
