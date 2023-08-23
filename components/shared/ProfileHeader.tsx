@@ -1,5 +1,10 @@
+"use client"
 import Link from "next/link";
 import Image from "next/image";
+import { ConnectWallet } from "@thirdweb-dev/react"
+import { useAddress } from "@thirdweb-dev/react";
+import { ThirdwebProvider, localWallet, paperWallet } from '@thirdweb-dev/react'
+//import UseWeb3 from "../../hooks/UseWeb3"
 
 interface Props {
   accountId: string;
@@ -11,6 +16,7 @@ interface Props {
   type?: string;
 }
 
+
 function ProfileHeader({
   accountId,
   authUserId,
@@ -20,7 +26,19 @@ function ProfileHeader({
   bio,
   type,
 }: Props) {
+
   return (
+
+    
+    <ThirdwebProvider
+    clientId="dd2c97d0c572e2b8a570ec077c6b75c7"
+      supportedWallets={[
+        paperWallet({
+          paperClientId: "68607adb-9903-4eda-90ff-2139781991a4",
+        }),
+        localWallet()
+      ]}
+    >
     <div className='flex w-full flex-col justify-start'>
       <div className='flex items-center justify-between'>
         <div className='flex items-center gap-3'>
@@ -38,6 +56,7 @@ function ProfileHeader({
               {name}
             </h2>
             <p className='text-base-medium text-gray-1'>@{username}</p>
+            
           </div>
         </div>
         {accountId === authUserId && type !== "Community" && (
@@ -49,17 +68,17 @@ function ProfileHeader({
                 width={16}
                 height={16}
               />
-
               <p className='text-light-2 max-sm:hidden'>Edit</p>
             </div>
           </Link>
         )}
       </div>
-
+      <div className="text-white my-4"><ConnectWallet/></div>
       <p className='mt-6 max-w-lg text-base-regular text-light-2'>{bio}</p>
 
       <div className='mt-12 h-0.5 w-full bg-dark-3' />
     </div>
+    </ThirdwebProvider>
   );
 }
 

@@ -4,11 +4,14 @@ import { Inter } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 
+
+
 import "../globals.css";
 import LeftSidebar from "@/components/shared/LeftSidebar";
 import Bottombar from "@/components/shared/Bottombar";
 import RightSidebar from "@/components/shared/RightSidebar";
 import Topbar from "@/components/shared/Topbar";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +19,8 @@ export const metadata: Metadata = {
   title: "Jon Maurice",
   description: "A Next.js 13 Meta JM application",
 };
+
+
 
 export default function RootLayout({
   children,
@@ -28,6 +33,7 @@ export default function RootLayout({
         baseTheme: dark,
       }}
     >
+
       <html lang='en'>
         <body className={inter.className}>
           <Topbar />

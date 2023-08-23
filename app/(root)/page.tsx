@@ -7,6 +7,7 @@ import Pagination from "@/components/shared/Pagination";
 import { fetchPosts } from "@/lib/actions/thread.actions";
 import { fetchUser } from "@/lib/actions/user.actions";
 
+
 async function Home({
   searchParams,
 }: {
@@ -24,8 +25,9 @@ async function Home({
   );
 
   return (
-    <>
+    <div>
       <h1 className='head-text text-left'>Home</h1>
+      <div></div>
 
       <section className='mt-9 flex flex-col gap-10'>
         {result.posts.length === 0 ? (
@@ -54,7 +56,7 @@ async function Home({
         pageNumber={searchParams?.page ? +searchParams.page : 1}
         isNext={result.isNext}
       />
-    </>
+    </div>
   );
 }
 
