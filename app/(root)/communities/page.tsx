@@ -31,9 +31,7 @@ async function Page({
   return (
     <>
       <h1 className='head-text'>Organisations</h1>
-      <div className="text-white">
-        Connect to web3
-      </div>
+    
       <div className='mt-5'>
         <Searchbar routeType='communities' />
       </div>

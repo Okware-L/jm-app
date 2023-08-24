@@ -7,6 +7,7 @@ interface StakingPool {
   endDate: string;
   apr: string;
   earned: string;
+  id: string;
 }
 
 interface StakeCardProps {
@@ -19,13 +20,13 @@ const StakeCard: React.FC<StakeCardProps> = ({ pools }) => (
       <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden w-80">
         <div className="bg-blue-500 text-gray-800 text-center p-4">
           <h1 className="text-xl font-semibold">Stake</h1>
-          <p className="text-sm">PancakeSwap</p>
         </div>
 
         <div className="p-4">
           {/* Staking Pool Details */}
           <p className="text-gray-800">Staking Pool:</p>
           <p className="text-lg font-semibold">{pool.name}</p>
+          <p className="text-lg font-semibold">{pool.id}</p>
 
           {/* Staking Period */}
           <p className="text-gray-800">Staking Period:</p>
@@ -46,7 +47,7 @@ const StakeCard: React.FC<StakeCardProps> = ({ pools }) => (
 
           {/* Action Buttons */}
           <div className="p-4 flex justify-center space-x-4">
-            <button className="bg-blue-500 hover:bg-blue-600 text-gray-800 font-semibold py-2 px-4 rounded-full border-gray-900">
+            <button className="bg-blue-500 hover:bg-blue-600 text-gray-800 font-semibold py-2 px-4 rounded-full border-solid border-2 border-sky-500">
               Stake
             </button>
             <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-full">
@@ -56,7 +57,7 @@ const StakeCard: React.FC<StakeCardProps> = ({ pools }) => (
         </div>
 
         <div className="bg-gray-100 p-4 text-center">
-          <p className="text-sm text-gray-600">Stake CAKE/BNB LP to earn CAKE</p>
+          <p className="text-sm text-gray-600">Stake JMS/ETH LP to earn JMS Tokens</p>
         </div>
       </div>
     ))}
