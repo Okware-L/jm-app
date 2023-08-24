@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import { useAddress, useContract, useTokenBalance } from "@thirdweb-dev/react";
-//import { STAKE_TOKEN_ADDRESS } from "../../constants/addresses";
+import { STAKE_TOKEN_ADDRESS } from "../../constants/addresses";
 //import { ConnectWallet } from '@thirdweb-dev/react';
 
 interface StakingPool {
