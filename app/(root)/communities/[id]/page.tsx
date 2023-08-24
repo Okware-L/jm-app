@@ -7,6 +7,8 @@ import UserCard from "@/components/cards/UserCard";
 import ThreadsTab from "@/components/shared/ThreadsTab";
 import ProfileHeader from "@/components/shared/ProfileHeader";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import StakeCard from '../../../../components/cards/StakeCard';
+
 
 import { fetchCommunityDetails } from "@/lib/actions/community.actions";
 
@@ -93,7 +95,20 @@ async function Page({ params }: { params: { id: string } }) {
 
           <TabsContent value='Investments' className='w-full text-light-1'>
             {/* @ts-ignore */}
-            Connect wallet button here
+            <p>current investments</p>
+            <StakeCard
+                  pools={[
+                    {
+                      id: 'HEALTH',
+                      stakingToken: '',
+                      rewardToken: '',
+                      startDate: '2023-08-01',
+                      endDate: '2023-09-01',
+                      apr: '30%',
+                      earned: '0.0 JMS',
+                    },
+                  ]}
+                />
           </TabsContent>
         </Tabs>
       </div>

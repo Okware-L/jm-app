@@ -25,29 +25,10 @@ function ProfileHeader({
   imgUrl,
   bio,
   type,
-}: Props) {
+}: Props) { 
+
 
   return (
-
-    
-    <ThirdwebProvider
-    clientId="dd2c97d0c572e2b8a570ec077c6b75c7"
-      supportedWallets={[
-        localWallet(),
-        metamaskWallet(),
-        magicLink({
-          apiKey: "pk_live_D57210D37D3C30CC",
-          oauthOptions: {
-            providers: [
-              "google",
-              "facebook",
-              "twitter",
-              "apple",
-            ],
-          },
-        }),
-      ]}
-    >
     <div className='flex w-full flex-col justify-start'>
       <div className='flex items-center justify-between'>
         <div className='flex items-center gap-3'>
@@ -87,7 +68,6 @@ function ProfileHeader({
 
       <div className='mt-12 h-0.5 w-full bg-dark-3' />
     </div>
-    </ThirdwebProvider>
   );
 }
 

@@ -2,6 +2,8 @@ import Image from "next/image";
 import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import StakeCard from '../../../../components/cards/StakeCard';
+//import { useAddress, useContract, useTokenBalance, ThirdwebProvider } from "@thirdweb-dev/react";
+//import { ConnectWallet } from '@thirdweb-dev/react';
 
 
 
@@ -21,7 +23,9 @@ async function Page({ params }: { params: { id: string } }) {
   const userInfo = await fetchUser(params.id);
   if (!userInfo?.onboarded) redirect("/onboarding");
 
+
   return (
+  
     <section>
       <ProfileHeader
         accountId={userInfo.id}
@@ -54,10 +58,10 @@ async function Page({ params }: { params: { id: string } }) {
               </TabsTrigger>
             ))}
           </TabsList>
-          {profileTabs.map((tab) => (
-            <div>
+       
+          
             <TabsContent
-              key={`content-${tab.label}`}
+              //key={`content-${tab.label}`}
               value='threads'
               className='w-full text-light-1'
             >
@@ -68,7 +72,10 @@ async function Page({ params }: { params: { id: string } }) {
                 accountType='User'
               />
             </TabsContent>
+        
+
             <TabsContent
+            //key={`content-${tab.label}`}
               value='Invest'
               className='w-full text-light-1'
             >
@@ -79,7 +86,8 @@ async function Page({ params }: { params: { id: string } }) {
                   pools={[
                     {
                       id: 'HEALTH',
-                      name: 'JMS/ETH LP',
+                      stakingToken: '',
+                      rewardToken: '',
                       startDate: '2023-08-01',
                       endDate: '2023-09-01',
                       apr: '30%',
@@ -90,9 +98,7 @@ async function Page({ params }: { params: { id: string } }) {
               </div>
              
             </TabsContent>
-
-            </div>
-          ))}
+       
         </Tabs>
       </div>
     </section>

@@ -1,8 +1,23 @@
+"use client"
+
 import React from 'react'
 import StakeCard from '../../../components/cards/StakeCard';
+import { useAddress, useContract, useTokenBalance } from "@thirdweb-dev/react";
+import { ConnectWallet } from '@thirdweb-dev/react';
+
 
 
 const page : React.FC= () => {
+  const address = useAddress();
+
+  if(!address) {
+    return(
+      <div>
+        <p className='text-white'>Connect Wallet</p>
+          <ConnectWallet/>
+      </div>
+    )
+  }
   return (
     <div className='container p-2'>
         <h1  className='text-white my-3'>Staking options</h1>
@@ -12,7 +27,8 @@ const page : React.FC= () => {
   pools={[
     {
       id: 'HEALTH',
-      name: 'JMS/ETH LP',
+       rewardToken: 'JMSr',
+       stakingToken: 'JMS',
       startDate: '2023-08-01',
       endDate: '2023-09-01',
       apr: '30%',
@@ -26,7 +42,8 @@ const page : React.FC= () => {
   pools={[
     {
       id:'EDUCATION',
-      name: 'JMS/ETH LP',
+       rewardToken: '',
+      stakingToken: '',
       startDate: '2023-08-01',
       endDate: '2023-09-01',
       apr: '14%',
@@ -41,7 +58,8 @@ const page : React.FC= () => {
   pools={[
     {
       id:'AGRICULTURE',
-      name: 'JMS/ETH LP',
+       rewardToken: '',
+  stakingToken: '',
       startDate: '2023-08-01',
       endDate: '2023-09-01',
       apr: '23%',
@@ -56,7 +74,8 @@ const page : React.FC= () => {
   pools={[
     {
       id:'BIOTECH',
-      name: 'JMS/ETH LP',
+       rewardToken: '',
+  stakingToken: '',
       startDate: '2023-08-01',
       endDate: '2023-09-01',
       apr: '28%',
@@ -71,7 +90,8 @@ const page : React.FC= () => {
   pools={[
     {
       id:'FINTECH',
-      name: 'JMS/ETH LP',
+       rewardToken: '',
+  stakingToken: '',
       startDate: '2023-08-01',
       endDate: '2023-09-01',
       apr: '40%',
@@ -86,7 +106,8 @@ const page : React.FC= () => {
   pools={[
     {
       id:'ARCHITECTURE',
-      name: 'JMS/ETH LP',
+       rewardToken: '',
+  stakingToken: '',
       startDate: '2023-08-01',
       endDate: '2023-09-01',
       apr: '30%',
@@ -101,7 +122,8 @@ const page : React.FC= () => {
   pools={[
     {
       id:'PHARMTECH',
-      name: 'JMS/ETH LP',
+       rewardToken: '',
+  stakingToken: '',
       startDate: '2023-08-01',
       endDate: '2023-09-01',
       apr: '40%',
@@ -116,7 +138,8 @@ const page : React.FC= () => {
   pools={[
     {
       id:'ART',
-      name: 'JMS/ETH LP',
+       rewardToken: '',
+  stakingToken: '',
       startDate: '2023-08-01',
       endDate: '2023-09-01',
       apr: '20%',
