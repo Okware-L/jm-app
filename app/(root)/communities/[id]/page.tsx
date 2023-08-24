@@ -27,7 +27,14 @@ async function Page({ params }: { params: { id: string } }) {
         bio={communityDetails.bio}
         type='Community'
       />
-      <div className="text-white">here?</div>
+
+      <div className="text-white my-3">
+        <h1 className="text-gray-300">
+          Talk To Organization Admin
+        </h1>
+        
+        </div>
+
       <div className='mt-9'>
         <Tabs defaultValue='threads' className='w-full'>
           <TabsList className='tab'>
@@ -82,6 +89,11 @@ async function Page({ params }: { params: { id: string } }) {
               accountId={communityDetails._id}
               accountType='Community'
             />
+          </TabsContent>
+
+          <TabsContent value='Investments' className='w-full text-light-1'>
+            {/* @ts-ignore */}
+            Connect wallet button here
           </TabsContent>
         </Tabs>
       </div>

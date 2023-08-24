@@ -25,6 +25,11 @@ export const sidebarLinks = [
     label: "Communities",
   },
   {
+    imgURL: "/assets/community.svg",
+    route: "/invest",
+    label: "Invest",
+  },
+  {
     imgURL: "/assets/user.svg",
     route: "/profile",
     label: "Profile",
@@ -33,14 +38,12 @@ export const sidebarLinks = [
 
 export const profileTabs = [
   { value: "threads", label: "Posts", icon: "/assets/reply.svg" },
-  { value: "replies", label: "Replies", icon: "/assets/members.svg" },
-  { value: "tagged", label: "Tagged", icon: "/assets/tag.svg" },
-  { value: "invest", label: "Investments", icon: "/assets/investment.svg" },
+  { value: "Investments", label: "Investments", icon: "/assets/tag.svg" },
 ];
 
 export const communityTabs = [
   { value: "threads", label: "Feed", icon: "/assets/reply.svg" },
   { value: "members", label: "Members", icon: "/assets/members.svg" },
   { value: "requests", label: "Requests", icon: "/assets/request.svg" },
-  { value: "invest", label: "Invest", icon: "/assets/investment.svg" },
+  { value: "Investments", label: "Investments", icon: "/assets/tag.svg" },
 ];

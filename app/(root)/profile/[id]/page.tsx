@@ -53,9 +53,10 @@ async function Page({ params }: { params: { id: string } }) {
             ))}
           </TabsList>
           {profileTabs.map((tab) => (
+            <div>
             <TabsContent
               key={`content-${tab.label}`}
-              value={tab.value}
+              value='threads'
               className='w-full text-light-1'
             >
               {/* @ts-ignore */}
@@ -65,6 +66,15 @@ async function Page({ params }: { params: { id: string } }) {
                 accountType='User'
               />
             </TabsContent>
+            <TabsContent
+              value='Investments'
+              className='w-full text-light-1'
+            >
+              {/* @ts-ignore */}
+             connect wallet button here
+            </TabsContent>
+
+            </div>
           ))}
         </Tabs>
       </div>
