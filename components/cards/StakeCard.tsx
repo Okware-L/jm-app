@@ -22,7 +22,7 @@ const StakeCard: React.FC<StakeCardProps> = ({ pools }) => (
           <h1 className="text-xl font-semibold">Stake</h1>
         </div>
 
-        <div className="p-4">
+        <div className="p-4 text-gray-800">
           {/* Staking Pool Details */}
           <p className="text-gray-800">Staking Pool:</p>
           <p className="text-lg font-semibold">{pool.name}</p>

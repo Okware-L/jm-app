@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
+import StakeCard from '../../../../components/cards/StakeCard';
+
 
 
 import { profileTabs } from "@/constants";
@@ -67,11 +69,26 @@ async function Page({ params }: { params: { id: string } }) {
               />
             </TabsContent>
             <TabsContent
-              value='Investments'
+              value='Invest'
               className='w-full text-light-1'
             >
               {/* @ts-ignore */}
-             connect wallet button here
+              <p>Current Investments</p>
+              <div className="my-2 ">
+                <StakeCard
+                  pools={[
+                    {
+                      id: 'HEALTH',
+                      name: 'JMS/ETH LP',
+                      startDate: '2023-08-01',
+                      endDate: '2023-09-01',
+                      apr: '30%',
+                      earned: '0.0 JMS',
+                    },
+                  ]}
+                />
+              </div>
+             
             </TabsContent>
 
             </div>

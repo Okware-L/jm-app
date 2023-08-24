@@ -5,7 +5,7 @@ import StakeCard from '../../../components/cards/StakeCard';
 const page : React.FC= () => {
   return (
     <div className='container p-2'>
-        <h1  className='text-white'>Staking options</h1>
+        <h1  className='text-white my-3'>Staking options</h1>
       <div className='lg:grid lg:grid-cols-2 lg:gap-2'>
         <div className="my-2 ">
      <StakeCard

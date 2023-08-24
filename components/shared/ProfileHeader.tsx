@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ConnectWallet } from "@thirdweb-dev/react"
 import { useAddress } from "@thirdweb-dev/react";
-import { ThirdwebProvider, localWallet, paperWallet } from '@thirdweb-dev/react'
+import { ThirdwebProvider, localWallet, paperWallet, magicLink, metamaskWallet } from '@thirdweb-dev/react'
 //import UseWeb3 from "../../hooks/UseWeb3"
 
 interface Props {
@@ -33,10 +33,19 @@ function ProfileHeader({
     <ThirdwebProvider
     clientId="dd2c97d0c572e2b8a570ec077c6b75c7"
       supportedWallets={[
-        paperWallet({
-          paperClientId: "68607adb-9903-4eda-90ff-2139781991a4",
+        localWallet(),
+        metamaskWallet(),
+        magicLink({
+          apiKey: "pk_live_D57210D37D3C30CC",
+          oauthOptions: {
+            providers: [
+              "google",
+              "facebook",
+              "twitter",
+              "apple",
+            ],
+          },
         }),
-        localWallet()
       ]}
     >
     <div className='flex w-full flex-col justify-start'>
