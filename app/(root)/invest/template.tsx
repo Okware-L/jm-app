@@ -3,7 +3,7 @@
 import React from "react";
 //import Invest from '../../../components/Invest'
 import { ChainId, ThirdwebProvider, magicLink, metamaskWallet  } from "@thirdweb-dev/react";
-import { Goerli, Ethereum, Polygon  } from "@thirdweb-dev/chains";
+import { Goerli, Ethereum, Polygon, Mumbai  } from "@thirdweb-dev/chains";
 
 
 export default function DashboardLayout({
@@ -12,18 +12,14 @@ export default function DashboardLayout({
   children: React.ReactNode
 }) {
 
-  //const activeChain = ChainId.Goerli;
+  const activeChain = ChainId.Goerli;
 
   return (
     <div>    
     <ThirdwebProvider 
-    //activeChain={activeChain}
-    activeChain={{
-      ...Goerli,
-      rpc: ["https://ethereum-goerli.publicnode.com"], // Override the "rpc" field.
-      // ... Override any other fields you want to customize.
-    }}
-    supportedChains={[Ethereum, Polygon]}
+    activeChain={activeChain}
+
+    supportedChains={[Ethereum, Polygon, Mumbai]}
     
         clientId="dd2c97d0c572e2b8a570ec077c6b75c7"
         supportedWallets={[
