@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { SignOutButton, SignedIn, useAuth } from "@clerk/nextjs";
+import { SignOutButton, SignedIn, useAuth, OrganizationSwitcher } from "@clerk/nextjs";
+import { dark } from "@clerk/themes";
 
 import { sidebarLinks } from "@/constants";
 
@@ -40,6 +41,16 @@ const LeftSidebar = () => {
             </Link>
           );
         })}
+        <div>
+        <OrganizationSwitcher
+          appearance={{
+            baseTheme: dark,
+            elements: {
+              organizationSwitcherTrigger: "py-2 px-4",
+            },
+          }}
+        />
+        </div>
       </div>
 
       <div className='mt-10 px-6'>

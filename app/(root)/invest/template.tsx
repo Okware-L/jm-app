@@ -12,7 +12,7 @@ export default function DashboardLayout({
   children: React.ReactNode
 }) {
 
-  const activeChain = Goerli;
+  const activeChain = Mumbai;
 
   return (
     <div>    
