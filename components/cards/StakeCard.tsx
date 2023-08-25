@@ -2,7 +2,7 @@
 import React from 'react';
 import { useAddress, useContract, useTokenBalance } from "@thirdweb-dev/react";
 import { REWARD_TOKEN_ADDRESS, STAKE_TOKEN_ADDRESS } from "../../constants/addresses";
-import { Skeleton } from "@/components/ui/skeleton"
+import Stake from '../Stake';
 
 
 //import { ConnectWallet } from '@thirdweb-dev/react';
@@ -84,14 +84,7 @@ function StakeCard({ pools }: StakeCardProps) {
             </div>
 
             {/* Action Buttons */}
-            <div className="p-4 flex justify-center space-x-4">
-              <button className="bg-blue-500 hover:bg-blue-600 text-gray-800 font-semibold py-2 px-4 rounded-full border-solid border-2 border-sky-500">
-                Stake
-              </button>
-              <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-full">
-                Unstake
-              </button>
-            </div>
+            <Stake/>
           </div>
 
           <div className="bg-gray-100 p-4 text-center">
