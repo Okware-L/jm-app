@@ -12,14 +12,14 @@ export default function DashboardLayout({
   children: React.ReactNode
 }) {
 
-  const activeChain = ChainId.Goerli;
+  const activeChain = Goerli;
 
   return (
     <div>    
     <ThirdwebProvider 
     activeChain={activeChain}
 
-    supportedChains={[Ethereum, Polygon, Mumbai]}
+    supportedChains={[Ethereum, Polygon, Mumbai, Goerli]}
     
         clientId="dd2c97d0c572e2b8a570ec077c6b75c7"
         supportedWallets={[
