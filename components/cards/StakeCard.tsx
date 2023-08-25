@@ -1,7 +1,10 @@
 "use client"
 import React from 'react';
 import { useAddress, useContract, useTokenBalance } from "@thirdweb-dev/react";
-import { STAKE_TOKEN_ADDRESS } from "../../constants/addresses";
+import { REWARD_TOKEN_ADDRESS, STAKE_TOKEN_ADDRESS } from "../../constants/addresses";
+import { Skeleton } from "@/components/ui/skeleton"
+
+
 //import { ConnectWallet } from '@thirdweb-dev/react';
 
 interface StakingPool {
@@ -22,6 +25,14 @@ function StakeCard({ pools }: StakeCardProps) {
 
   const address = useAddress();
 
+  const { contract: stakeTokenContract, isLoading: loadingStakeToken } = useContract(STAKE_TOKEN_ADDRESS);
+
+  const { data: tokenBalance, isLoading: loadingTokenBalance } = useTokenBalance(stakeTokenContract, address);
+
+  const { contract: rewardTokenContract, isLoading: loadingarewardToken } = useContract(REWARD_TOKEN_ADDRESS);
+
+  const { data: rewardTokenBalance, isLoading: loadingrewardTokenBalance } = useTokenBalance(rewardTokenContract, address);
+
   if(!address){
     return(
       <div className="text-white my-5">
@@ -41,9 +52,19 @@ function StakeCard({ pools }: StakeCardProps) {
 
           <div className="p-4 text-gray-800">
             {/* Staking Pool Details */}
-            <p className="text-gray-800 text-lg font-semibold"><span className="">Staking Pool: </span>{pool.id}</p>
-            <p className="text-lg font-semibold"><span>Staking Token:  </span>{pool.stakingToken}</p>
-            <p className="text-lg font-semibold"><span>Reward Token:  </span>{pool.rewardToken}</p>
+            <h1 className="text-gray-800 text-lg font-semibold"><span className="">Staking Pool: </span>{pool.id}</h1>
+            
+              <span className='text-lg font-semibold'>Staking Token:  </span>
+              <div className="text-lg font-semibold flex justify-between py-3">
+              <p>${tokenBalance?.symbol}</p>
+              <p>Balance: {tokenBalance?.displayValue}</p>
+             
+            </div>
+              <span>Reward Token:  </span>
+            <div className="text-lg font-semibold py-3 flex justify-between">
+              <p>${rewardTokenBalance?.symbol}</p>
+              <p>Balance: {rewardTokenBalance?.displayValue}</p>
+            </div>
             
             {/* Staking Period */}
             <p className="text-gray-800">Staking Period:</p>

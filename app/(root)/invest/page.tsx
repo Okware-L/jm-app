@@ -27,8 +27,8 @@ const page : React.FC= () => {
   pools={[
     {
       id: 'HEALTH',
-       rewardToken: 'JMSr',
-       stakingToken: 'JMS',
+       rewardToken: '',
+       stakingToken: '',
       startDate: '2023-08-01',
       endDate: '2023-09-01',
       apr: '30%',
