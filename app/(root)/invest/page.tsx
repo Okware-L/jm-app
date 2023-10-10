@@ -15,7 +15,6 @@ const page : React.FC= () => {
   if(!address) {
     return(
       <div>
-        <p className='text-white'>Connect Wallet</p>
           <ConnectWallet/>
       </div>
     )
