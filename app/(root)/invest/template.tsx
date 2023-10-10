@@ -1,8 +1,9 @@
 "use client"
 
+//require("dotenv").config();
 import React from "react";
 //import Invest from '../../../components/Invest'
-import { ChainId, ThirdwebProvider, magicLink, metamaskWallet  } from "@thirdweb-dev/react";
+import { ThirdwebProvider, metamaskWallet, trustWallet ,rainbowWallet , walletConnect} from "@thirdweb-dev/react";
 import { Goerli, Ethereum, Polygon, Mumbai  } from "@thirdweb-dev/chains";
 
 
@@ -12,7 +13,7 @@ export default function DashboardLayout({
   children: React.ReactNode
 }) {
 
-  const activeChain = Mumbai;
+  const activeChain = Goerli;
 
   return (
     <div>    
@@ -24,17 +25,9 @@ export default function DashboardLayout({
         clientId="dd2c97d0c572e2b8a570ec077c6b75c7"
         supportedWallets={[
           metamaskWallet(),
-          magicLink({
-            apiKey: "pk_live_D57210D37D3C30CC",
-            oauthOptions: {
-              providers: [
-                "google",
-                "facebook",
-                "twitter",
-                "apple",
-              ],
-            },
-          }),
+          trustWallet(),
+          rainbowWallet(),
+          walletConnect()
         ]}
     >
     <section>

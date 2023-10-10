@@ -34,6 +34,11 @@ export const sidebarLinks = [
     route: "/profile",
     label: "Profile",
   },
+  {
+    imgURL: "/assets/chat.png",
+    route: "/chat",
+    label: "Support",
+  },
 ];
 
 export const profileTabs = [
